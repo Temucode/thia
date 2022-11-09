@@ -14,7 +14,8 @@
     <div class="row d-flex flex-row">
         <% @dessins.each do |dessin| %>
        <div class="col-md-6 col-lg-4 mb-2">
-       <%= cl_image_tag(dessin.image)%>
+
+        <%= cl_image_tag(dessin.image.key, width:"180px") %>
 
           <%= link_to dessin.name, dessin_path(dessin), class: "d-flex justify-content-center text-decoration-none" %>
        </div>
