@@ -1,0 +1,2 @@
+class Dessin < ApplicationRecord
+end
