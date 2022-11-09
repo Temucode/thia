@@ -3,8 +3,8 @@
     <div class="col mt-5">
       <h1><%= @dessin.name  %></h1>
       <%= link_to "Edit", edit_dessin_path(@dessin) %>
-      <p class="mt-4 well">Description: <%= @dessin.description  %></p>
-      <%= link_to "Back", dessins_path(@dessin)  %>
+      <p class="mt-4 well">Description: <%= @dessin.description %></p>
+      <%= link_to "Back", dessins_path(@dessin) %>
       <%= link_to "Delete", dessin_path(@dessin),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
       %>

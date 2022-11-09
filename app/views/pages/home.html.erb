@@ -5,6 +5,11 @@
           <%# <%= image_tag("img-thia5.jpeg", width: '200px') %>
           <!-- Masthead Heading-->
           <h1 class="masthead-heading text-uppercase mb-0">Thia BORMS</h1>
+          <% if user_signed_in? %>
+              <p>Hello <%= current_user.email %></p>
+          <% else %>
+              <p You are not signed</p>
+          <% end %>
           <!-- Icon Divider-->
           <div class="divider-custom divider-light">
               <div class="divider-custom-line"></div>
