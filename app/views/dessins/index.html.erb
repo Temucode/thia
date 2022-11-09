@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="top d-flex justify-content flex-start">
+    <div class="title">
+      <h1>Portfolio</h1>
+    </div>
+    <div class="button">
+      <button class="btn btn-primary">
+        <%= link_to "Create new manga", new_dessin_path(@new_dessin), class:"text-decoration-none text-white" %>
+      </button>
+    </div>
+  </div>
+<br>
+  <div class="cards">
+    <div class="row d-flex flex-row">
+        <% @dessins.each do |dessin| %>
+       <div class="col-md-6 col-lg-4 mb-2">
+          <img class="img-fluid" src="https://media.gettyimages.com/vectors/freehand-monster-doodle-in-full-color-vector-id842482066?s=612x612" alt="..." />
+          <%= link_to dessin.name, dessin_path(dessin), class: "d-flex justify-content-center text-decoration-none" %>
+       </div>
+        <% end %>
+    </div>
+  </div>
+</div>

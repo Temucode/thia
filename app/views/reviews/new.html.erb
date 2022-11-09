@@ -1,0 +1,10 @@
+<div class="container mt-5">
+  <div class="row">
+    <h1 class="mt-5"> <%= @dessin.name %> - Review</h1>
+
+    <%= simple_form_for [@dessin, @review] do |f| %>
+      <%= f.input :content %>
+      <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

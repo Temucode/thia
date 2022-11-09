@@ -1,0 +1,6 @@
+  <%= simple_form_for(dessin) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :image, as: :file %>
+    <%= f.submit %>
+  <% end %>
