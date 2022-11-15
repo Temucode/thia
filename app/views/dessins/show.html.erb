@@ -1,7 +1,8 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col mt-5">
-      <h1><%= @dessin.name  %></h1>
+      <h1><%= @dessin.name %></h1>
+      <%= cl_image_tag @dessin.image.key %>
       <%= link_to "Edit", edit_dessin_path(@dessin) %>
       <p class="mt-4 well">Description: <%= @dessin.description %></p>
       <%= link_to "Back", dessins_path(@dessin) %>
@@ -10,7 +11,7 @@
       %>
       <div class="mt-5">
         <div class="d-flex justify-content-end">
-          <button class="btn btn-primary" >
+          <button class="btn btn-outline-primary" >
             <%= link_to "Create new comment", new_dessin_review_path(@dessin), class:"text-white text-decoration-none" %>
           </button>
         </div>

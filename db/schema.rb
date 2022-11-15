@@ -45,7 +45,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_185050) do
   create_table "dessins", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.binary "image"
