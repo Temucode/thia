@@ -11,12 +11,14 @@
     </div>
   </div>
 <br>
-  <div class="cards">
-    <div class="row d-flex flex-row">
-        <% @dessins.each do |dessin| %>
+  <div class="card">
+    <div class="row">
+      <% @dessins.each do |dessin| %>
        <div class="col-md-6 col-lg-4 mb-2">
-        <%= cl_image_tag(dessin.image.key, width:"300px") %>
-        <%= link_to dessin.name, dessin_path(dessin), class: "d-flex justify-content-center text-decoration-none" %>
+        <%= cl_image_tag(dessin.image.key, width:"350px", height:"350px") %>
+        <div class="card-trip-infos">
+        <%= link_to dessin.name, dessin_path(dessin), class: "text-decoration-none" %>
+        </div>
        </div>
         <% end %>
     </div>
