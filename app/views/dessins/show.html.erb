@@ -1,17 +1,25 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col mt-5">
-      <h1><%= @dessin.name %></h1>
-      <%= cl_image_tag @dessin.image.key %>
-      <%= link_to "Edit", edit_dessin_path(@dessin) %>
-      <p class="mt-4 well">Description: <%= @dessin.description %></p>
-      <%= link_to "Back", dessins_path(@dessin) %>
-      <%= link_to "Delete", dessin_path(@dessin),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
+      <h1 class="text-center"><%= @dessin.name %></h1>
+        <div class="d-flex justify-content-center">
+          <%= cl_image_tag @dessin.image.key, width:"700px", height:"1000px" %>
+        </div>
+            <p class="mt-4 well"><strong>Description:</strong> <%= @dessin.description %></p>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-outline-primary">
+              <%= link_to "Back", dessins_path(@dessin), class:"text-decoration-none text-reset" %>
+            </label>
+            <label class="btn btn-outline-primary">
+              <%= link_to "Edit", edit_dessin_path(@dessin), class:"text-decoration-none text-reset" %>
+            </label>
+            <label class="btn btn-outline-primary">
+              <%= link_to "Delete", dessin_path(@dessin), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"text-decoration-none text-reset" %>
+            </label>
+          </div>
       <div class="mt-5">
         <div class="d-flex justify-content-end">
-          <button class="btn btn-outline-primary" >
+          <button class="btn btn-primary" >
             <%= link_to "Create new comment", new_dessin_review_path(@dessin), class:"text-white text-decoration-none" %>
           </button>
         </div>

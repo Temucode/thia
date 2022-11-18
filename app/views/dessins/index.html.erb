@@ -5,22 +5,24 @@
       <h1 class="mt-5 text-uppercase">Portfolio</h1>
     </div>
     <div class="button d-flex justify-content-end">
-      <button class="btn btn-outline-primary">
+      <button class="btn btn-primary">
         <%= link_to "Create new manga", new_dessin_path(@new_dessin), class:"text-decoration-none text-white" %>
       </button>
     </div>
   </div>
 <br>
-  <div class="card">
-    <div class="row">
+  <div class="cards">
       <% @dessins.each do |dessin| %>
-       <div class="col-md-6 col-lg-4 mb-2">
-        <%= cl_image_tag(dessin.image.key, width:"350px", height:"350px") %>
+        <%= link_to dessin_path(dessin) do %>
+       <div class="card-trip">
+          <%= cl_image_tag(dessin.image.key, width:"350px", height:"350px") %>
         <div class="card-trip-infos">
-        <%= link_to dessin.name, dessin_path(dessin), class: "text-decoration-none" %>
+          <div>
+            <%= link_to dessin.name, dessin_path(dessin), class: "text-decoration-none" %>
+          </div>
         </div>
        </div>
-        <% end %>
-    </div>
+       <% end %>
+      <% end %>
   </div>
 </div>

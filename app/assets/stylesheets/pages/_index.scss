@@ -2,5 +2,23 @@
 @import "home";
 
 .btn {
-  background-color: blue;
+  // background-color: blue;
+}
+
+.cards {
+ display: flex;
+ justify-content: space-around;
+ flex-wrap: wrap;
+ align-content: start;
+
+}
+
+.card-trip {
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.card-trip-infos {
+  display: flex;
+  justify-content: center;
 }
