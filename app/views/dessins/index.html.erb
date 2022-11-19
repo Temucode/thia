@@ -10,18 +10,18 @@
       </button>
     </div>
   </div>
-<br>
+  <br>
   <div class="cards">
       <% @dessins.each do |dessin| %>
         <%= link_to dessin_path(dessin) do %>
-       <div class="card-trip">
-          <%= cl_image_tag(dessin.image.key, width:"350px", height:"350px") %>
-        <div class="card-trip-infos">
-          <div>
-            <%= link_to dessin.name, dessin_path(dessin), class: "text-decoration-none" %>
+          <div class="cardx">
+            <div class="card-trip">
+              <%= cl_image_tag(dessin.image.key, width:"350px", height:"350px") %>
+            </div>
+            <div class="card-trip-infos">
+              <%= link_to dessin.name, dessin_path(dessin), class: "text-decoration-none mb-4" %>
+            </div>
           </div>
-        </div>
-       </div>
        <% end %>
       <% end %>
   </div>
