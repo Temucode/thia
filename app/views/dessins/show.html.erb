@@ -6,33 +6,35 @@
           <%= cl_image_tag @dessin.image.key, width:"700px", height:"1000px", class:"rounded-4" %>
         </div>
             <p class="mt-4 well"><strong>Description:</strong> <%= @dessin.description %></p>
-          <div class="btn-group">
+          <div class="btn-group d-flex justify-content-center">
             <button type="button" class="btn btn-primary">
               <%= link_to "Back", dessins_path(@dessin), class:"text-decoration-none text-white" %>
             </button>
-            <button type="button" class="btn btn-primary">
-              <%= link_to "Edit", edit_dessin_path(@dessin), class:"text-decoration-none text-white" %>
-            </button>
-            <button type="button" class="btn btn-primary">
-              <%= link_to "Delete", dessin_path(@dessin), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"text-decoration-none text-white" %>
-            </button>
+            <% if user_signed_in? %>
+              <button type="button" class="btn btn-primary">
+                <%= link_to "Edit", edit_dessin_path(@dessin), class:"text-decoration-none text-white" %>
+              </button>
+              <button type="button" class="btn btn-primary">
+                <%= link_to "Delete", dessin_path(@dessin), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"text-decoration-none text-white" %>
+              </button>
+            <% end %>
           </div>
-      <div class="mt-5">
+      <%# <div class="mt-5">
         <div class="d-flex justify-content-end">
           <button class="btn btn-primary" >
             <%= link_to "Create new comment", new_dessin_review_path(@dessin), class:"text-white text-decoration-none" %>
-          </button>
-        </div>
-          <p><strong>Reviews</strong></p>
-          <ul class="list-group">
-            <% @dessin.reviews.each do |review| %>
-              <li class="list-group-item">
-                <%= review.content %>
-                <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"d-flex justify-content-end mt-2" %>
-              </li>
-            <% end %>
-          </ul>
-      </div>
+          <%# </button> %>
+        <%# </div> %>
+          <%# <p><strong>Reviews</strong></p> %>
+          <%# <ul class="list-group"> %>
+            <%# <% @dessin.reviews.each do |review| %>
+              <%# <li class="list-group-item"> %>
+                <%# <%= review.content %>
+                <%# <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"d-flex justify-content-end mt-2" %>
+              <%# </li> %>
+            <%# <% end %>
+          <%# </ul> %>
+      <%# </div> %>
     </div>
   </div>
 </div>

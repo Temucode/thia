@@ -2,19 +2,23 @@
 @import "home";
 
 .cards {
- display: flex;
- justify-content: space-around;
- flex-wrap: wrap;
- align-content: start;
+  max-width: 1300px;
+  width: 80%;
+  height: auto;
+  margin: 20px auto;
+  border: 1px solid #333;
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
-.card-trip {
-  overflow: hidden;
-  margin-bottom: 10px;
-  border-radius: 6px;
-}
-
-.card-trip-infos {
+.cards > .card-info {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px
+}
+
+.name {
+
 }
