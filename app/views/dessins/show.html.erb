@@ -6,7 +6,7 @@
           <%= cl_image_tag @dessin.image.key, width:"700px", height:"1000px", class:"rounded-4" %>
         </div>
             <p class="mt-4 well"><strong>Description:</strong> <%= @dessin.description %></p>
-          <div class="btn-group d-flex justify-content-center">
+          <div class="btn-group d-flex justify-content-center pb-5">
             <button type="button" class="btn btn-primary">
               <%= link_to "Back", dessins_path(@dessin), class:"text-decoration-none text-white" %>
             </button>
