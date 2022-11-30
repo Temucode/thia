@@ -25,7 +25,7 @@
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
-                      <%= cl_image_tag(dessin.image.key, class:"image-fluid rounded-4", width:"350px", height:"350px") %>
+                      <%= cl_image_tag(dessin.image.key, class:"image-fluid rounded-4", width:"400px", height:"350px") %>
                 </div>
             </div>
             <% end %>
@@ -47,34 +47,35 @@
                       <div class="row justify-content-center">
                           <div class="col-lg-8">
                               <!-- Portfolio Modal - Title-->
-                              <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"><%= link_to dessin.name, class:"text-decoration-none" %></h2>
+                              <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"><%= dessin.name %></h2>
                               <!-- Icon Divider-->
                               <div class="divider-custom">
                                   <div class="divider-custom-line"></div>
                                   <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                   <div class="divider-custom-line"></div>
                               </div>
+                              <!-- modification button -->
+                              <div class="btn-group d-flex justify-content-center pb-5">
+                              <button type="button" class="btn btn-primary">
+                                <%= link_to "Back", dessins_path(@dessins), class:"text-decoration-none text-white" %>
+                              </button>
+                              <% if user_signed_in? %>
+                                <button type="button" class="btn btn-primary">
+                                  <%= link_to "Edit", edit_dessin_path(@dessins), class:"text-decoration-none text-white" %>
+                                </button>
+                                <button type="button" class="btn btn-primary">
+                                  <%= link_to "Delete", dessin_path(@dessins), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"text-decoration-none text-white" %>
+                                </button>
+                              <% end %>
+                              </div>
                               <!-- Portfolio Modal - Image-->
                               <%= cl_image_tag(dessin.image.key, class:"img-fluid rounded mb-5")  %>
                               <!-- Portfolio Modal - Text-->
-                              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                              <p class="mt-4 well"><strong>Description:</strong><%= dessin.description %></p>
                               <button class="btn btn-primary" data-bs-dismiss="modal">
                                   <i class="fas fa-xmark fa-fw"></i>
                                   Close Window
                               </button>
-                              <%# <div class="btn-group d-flex justify-content-center pb-5"> %>
-                              <%# <button type="button" class="btn btn-primary"> %>
-                                <%# <%= link_to "Back", dessins_path(@dessin), class:"text-decoration-none text-white" %>
-                              <%# </button> %>
-                              <%# <% if user_signed_in? %>
-                                <%# <button type="button" class="btn btn-primary"> %>
-                                  <%# <%= link_to "Edit", edit_dessin_path(@dessin), class:"text-decoration-none text-white" %>
-                                <%# </button> %>
-                                <%# <button type="button" class="btn btn-primary"> %>
-                                  <%# <%= link_to "Delete", dessin_path(@dessin), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"text-decoration-none text-white" %>
-                                <%# </button> %>
-                              <%# <% end %>
-                              <%# </div> %>
                           </div>
                       </div>
                   </div>

@@ -12,9 +12,7 @@ Rails.application.routes.draw do
   # get "dessins/:id", to: "dessins#show", as: :dessin
   # patch "dessins/:id", to: "dessins#update"
   # delete "dessins/:id", to: "dessins#destroy"
-  resources :dessins do
-    resources :reviews, only: [:index, :new, :create]
-  end
-  resources :reviews, only: [:show, :edit, :update, :destroy]
-
+  resources :dessins
+  # esources :reviews, only: [:index, :new, :create]
+  # resources :reviews, only: [:show, :edit, :update, :destroy]
 end
