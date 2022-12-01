@@ -5,9 +5,9 @@ class DessinsController < ApplicationController
     @dessins = Dessin.all
   end
 
-  #def show
-  # @dessin = Dessin.find(params[:id])
-  #end
+  def show
+   #@dessin = Dessin.find(params[:id])
+  end
 
   def new
     @dessin = Dessin.new
