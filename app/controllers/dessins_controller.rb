@@ -15,6 +15,8 @@ class DessinsController < ApplicationController
 
   def create
     @dessin = Dessin.new(dessin_params)
+    @user = current_user
+    @dessin.user_id = @user.id
     @dessin.save
     redirect_to dessins_path(@dessin)
   end
@@ -42,6 +44,6 @@ class DessinsController < ApplicationController
   end
 
   def dessin_params
-    params.require(:dessin).permit(:image, :name, :description)
+    params.require(:dessin).permit(:image, :name, :description, :user_id)
   end
 end
