@@ -7,5 +7,5 @@ class Dessin < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
   # has_many_attached :image
-  validates :image, presence: true
+  has_one_attached :image
 end

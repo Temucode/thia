@@ -47,7 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_27_140216) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.binary "image"
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_dessins_on_user_id"
   end
