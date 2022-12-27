@@ -6,6 +6,6 @@ class Dessin < ApplicationRecord
   validates :description, uniqueness: true
   has_many :reviews, dependent: :destroy
 
-  # has_many_attached :image
-  validates :image, presence: true
+  has_many_attached :image
+  # has_one_attached :image
 end
