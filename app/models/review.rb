@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  belongs_to :dessin
+  # belongs_to :dessin
 
-  validates :content, presence: true
+  # validates :content, presence: true
 end
