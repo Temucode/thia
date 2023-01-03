@@ -1,5 +1,8 @@
 // Specific CSS for your home-page
 // header
+body {
+  background-image: url(https://i.pinimg.com/originals/11/f4/c9/11f4c98644598767a5fbf2cba07beab7.gif);
+}
 
 .masthead {
   padding-top: calc(6rem + 74px);
@@ -217,6 +220,7 @@
 
 .bg-primary{
   background-color: #b666d2 !important;
+  opacity: 0.9;
 }
 
 .text-secondary {
